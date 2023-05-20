@@ -42,10 +42,10 @@
       </a-table>
     </a-col>
   </a-row>
-  <a-modal v-model:open="visible" :footer="null">
+  <a-modal v-model:open="visible" :footer="null" width="30%">
     <template #title>
       <a-typography-title :level="2">{{
-        `País: ${country?.name?.official}`
+        `País: ${country?.name?.common}`
       }}</a-typography-title>
     </template>
     <table>
@@ -54,7 +54,9 @@
           <a-typography-title :level="3">Bandera</a-typography-title>
         </td>
         <td></td>
-        <a-typography-title :level="3">Información</a-typography-title>
+        <td>
+          <a-typography-title :level="3">Información</a-typography-title>
+        </td>
       </tr>
       <tr>
         <td>
@@ -79,7 +81,7 @@
         <a-typography-title :level="2">Traducción</a-typography-title>
       </a-col>
     </a-row>
-    <a-row :gutter="16">
+    <a-row type="flex" justify="center">
       <a-col
         class="gutter-row"
         :span="6"

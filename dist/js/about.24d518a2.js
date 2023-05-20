@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksearch_countries_app"]=self["webpackChunksearch_countries_app"]||[]).push([[443],{89:function(n,t){t.Z=(n,t)=>{const c=n.__vccOpts||n;for(const[r,s]of t)c[r]=s;return c}},7381:function(n,t,c){c.r(t),c.d(t,{default:function(){return p}});var r=c(3396);const s={class:"about"},u=(0,r._)("h1",null,"This is an about page",-1),e=[u];function a(n,t){return(0,r.wg)(),(0,r.iD)("div",s,e)}var o=c(89);const i={},f=(0,o.Z)(i,[["render",a]]);var p=f}}]);
+//# sourceMappingURL=about.24d518a2.js.map
