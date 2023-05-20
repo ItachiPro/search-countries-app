@@ -7,8 +7,20 @@ const useCountry = () => {
     return response;
   };
 
+  const getCountry = async (code) => {
+    const response = await countriesServices.getCountry(code);
+    return response;
+  };
+
+  const getCountryByName = async (name) => {
+    const response = await countriesServices.getCountryByName(name);
+    return response;
+  };
+
   return {
     getCountries,
+    getCountry,
+    getCountryByName,
   };
 };
 

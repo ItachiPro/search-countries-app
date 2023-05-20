@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import axios from "axios";
+import store from "@/store";
 
 let config = {
   baseURL: process.env.VUE_APP_API_URL || "http://127.0.0.1:8000/",
@@ -18,23 +19,23 @@ instance.interceptors.request.use(function (config) {
 instance.interceptors.response.use(
   (response) => response,
   async (error) => {
-    let message = "";
-    let type = "error";
+    let msg = "";
 
     if (error.response.status == 0) {
-      message = "No se pudo establecer conexión con el servidor";
+      msg = "No se pudo establecer conexión con el servidor";
     } else if (error.response.status == 500) {
-      message = "Error de servidor";
+      msg = "Error de servidor";
     } else if (error.response.status >= 400 && error.response.status < 500) {
       if (error.response.data.lenght != 0) {
-        message = error.response.data[0].message;
+        msg = error.response.data.message;
       } else {
-        message = error.response.statusText;
+        msg = error.response.statusText;
       }
     } else {
-      message = error.response.statusText;
+      msg = error.response.statusText;
     }
-    console.log(message, type);
+    store.dispatch("message", msg);
+    store.dispatch("showAlter");
     return Promise.resolve(error.message);
   }
 );
